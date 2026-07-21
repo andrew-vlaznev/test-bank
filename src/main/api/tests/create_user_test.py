@@ -15,11 +15,11 @@ class TestCreateUser:
     def test_create_user_valid(self, api_manager: ApiManager, create_user_request: CreateUserRequest, db_session: Session):
         response = api_manager.admin_steps.create_user(create_user_request)
 
-        assert create_user_request.username == response.username
-        assert create_user_request.role == response.role
+        assert create_user_request.username == response.username, "Имя созданного пользователя не совпадает"
+        assert create_user_request.role == response.role, "Роль созданного пользователя не совпадает"
 
         user_from_db = User.get_user_by_username(db_session, create_user_request.username)
-        assert user_from_db.username == create_user_request.username, 'Созданного пользователя нет в БД'
+        assert user_from_db.username == create_user_request.username, "Имя пользователя в БД не совпадает"
 
 
     @pytest.mark.parametrize(

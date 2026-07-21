@@ -15,3 +15,15 @@ pytest
 ## Generate Allure
 
 allure serve allure-results
+
+## Test Coverage
+
+Implemented API tests:
+
+- Create User
+- Login
+- Create Account
+- Deposit
+- Transfer
+- Credit
+- Credit Repay
