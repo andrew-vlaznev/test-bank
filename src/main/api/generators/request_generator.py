@@ -5,7 +5,6 @@ from src.main.api.models.credit_repay_request import RepayRequest
 
 
 class RequestGenerator:
-
     @staticmethod
     def credit(
             account_id: int,
